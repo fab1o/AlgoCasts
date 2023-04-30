@@ -5,7 +5,7 @@ test('anagrams function exists', () => {
 });
 
 test('"hello" is an anagram of "llohe"', () => {
-  expect(anagrams('hello', 'llohe')).toBeTruthy();
+  expect(anagrams('hello', 'lloHe')).toBeTruthy();
 });
 
 test('"Whoa! Hi!" is an anagram of "Hi! Whoa!"', () => {
@@ -18,6 +18,10 @@ test('"One One" is not an anagram of "Two two two"', () => {
 
 test('"One one" is not an anagram of "One one c"', () => {
   expect(anagrams('One one', 'One one c')).toBeFalsy();
+});
+
+test('"One one" is not an anagram of "b"', () => {
+  expect(anagrams('abc', 'b')).toBeFalsy();
 });
 
 test('"A tree, a life, a bench" is not an anagram of "A tree, a fence, a yard"', () => {
