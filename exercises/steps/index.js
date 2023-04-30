@@ -17,6 +17,43 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n) {
 
-module.exports = steps;
+    for (let i = 1; i <= n; i++) {
+        
+        let msg = '';
+        
+        for (let k = 1; k <= i; k++) {
+            msg += '#';
+        }
+        
+        for (let k = 1; k <= n - i; k++) {
+            msg += ' ';
+        }
+
+        console.log(msg);
+    }
+
+}
+
+function stepsRepeat(n, row = 0, step = '') {
+
+    if (n === row) {
+        return;
+    }
+
+    if (n === step.length) {
+        console.log(step);
+
+        stepsRepeat(n, ++row);
+        return;
+    }
+
+    step += step.length <= row ? '#' : ' ';
+
+    stepsRepeat(n, row, step);
+
+}
+
+
+module.exports = stepsRepeat;

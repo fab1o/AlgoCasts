@@ -12,6 +12,12 @@ test('pyramid is a function', () => {
   expect(typeof pyramid).toEqual('function');
 });
 
+test('prints a pryamid for n = 1', () => {
+  pyramid(1);
+  expect(console.log.mock.calls[0][0]).toEqual('#');
+  expect(console.log.mock.calls.length).toEqual(1);
+});
+
 test('prints a pryamid for n = 2', () => {
   pyramid(2);
   expect(console.log.mock.calls[0][0]).toEqual(' # ');
