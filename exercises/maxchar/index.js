@@ -31,5 +31,6 @@ function maxChar(str) {
 
     return mostCommonChar;
 }
+// O(n)
 
 module.exports = maxChar;

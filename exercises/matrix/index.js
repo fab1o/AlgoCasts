@@ -48,4 +48,6 @@ function matrix(n) {
     return matrix;
 }
 
+// O(n^2)
+
 module.exports = matrix;

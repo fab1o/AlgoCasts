@@ -35,6 +35,7 @@ function steps(n) {
     }
 
 }
+// O(n^2)
 
 function stepsRepeat(n, row = 0, step = '') {
 
@@ -54,6 +55,8 @@ function stepsRepeat(n, row = 0, step = '') {
     stepsRepeat(n, row, step);
 
 }
+
+// O(n^2)
 
 
 module.exports = stepsRepeat;

@@ -24,6 +24,8 @@ function chunk(array, size) {
     return chunked;
 }
 
+// O(n)
+
 function chunkWithSlice(array, size) {
     const chunked = [];
 
@@ -33,5 +35,7 @@ function chunkWithSlice(array, size) {
 
     return chunked;
 }
+
+// O(n)
 
 module.exports = chunkWithSlice;

@@ -66,5 +66,6 @@ function pyramid(n, row = 1, step = '') {
     pyramid(n, row, step);
 
 }
+// O(n^2)
 
 module.exports = pyramid;

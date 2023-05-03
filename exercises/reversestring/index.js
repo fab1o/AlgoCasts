@@ -22,5 +22,6 @@ function reverse(str) {
 
     return reversed;
 }
+// O(n)
 
 module.exports = reverse;
