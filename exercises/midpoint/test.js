@@ -1,6 +1,5 @@
 const midpoint = require('./index');
 const L = require('./linkedlist');
-const Node = L.Node;
 const LinkedList = L.LinkedList;
 
 test('Midpoint is a function', () => {
@@ -8,6 +7,11 @@ test('Midpoint is a function', () => {
 });
 
 describe('Midpoint returns the middle node of an odd numbered list', () => {
+  test('when the list has 3 elements', () => {
+    const l = new LinkedList();
+    expect(midpoint(l)).toEqual(null);
+  });
+
   test('when the list has 3 elements', () => {
     const l = new LinkedList();
     l.insertLast('a');

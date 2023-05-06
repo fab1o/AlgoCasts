@@ -1,5 +1,5 @@
 // --- Directions
-// Given a linked list, return the element n spaces
+// Given a linked list, return the element n
 // from the last node in the list.  Do not call the 'size'
 // method of the linked list.  Assume that n will always
 // be less than the length of the list.
@@ -11,6 +11,16 @@
 //    list.insertLast('d');
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+function fromLast(list, n) {
+    let node = list.head;
+    let count = 1;
+
+    while(count < n && node) {
+        node = node.next;
+        count++;
+    }
+
+    return node;
+}
 
 module.exports = fromLast;
