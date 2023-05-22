@@ -28,35 +28,38 @@ class Node {
     }
 
     remove(data) {
-        let index = -1;
-
-        for (let i = 0; i < this.children.length; i++) {
-            if (this.children[i].data === data) {
-                index = i;
-                break;
-            }
-        }
-
-        if (index === -1) {
-            return;
-        }
-
-        while(index < this.children.length) {
-            this.children[index] = this.children[++index];
-        }
-
-        this.children.pop();
+        this.children = this.children.filter((node) => node.data !== data);
     }
-}
+}   
 
 class Tree {
     constructor() {
         this.root = null;
     }
 
-    // *traverseDF() {
-    //     yield *this.root.traverseDF();
-    // }
+    traverseBF(func) {
+        const arr = [this.root];
+
+        while (arr.length) {
+            const node = arr.shift();
+
+            node.children.forEach((child) => arr.push(child));
+
+            func(node);
+        }
+    }
+
+    traverseDF(func) {
+        const arr = [this.root];
+
+        while (arr.length) {
+            const node = arr.shift();
+
+            arr.unshift(...node.children);
+
+            func(node);
+        }
+    }
 }
 
 module.exports = { Tree, Node };
